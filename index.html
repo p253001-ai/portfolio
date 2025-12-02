@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Muhammad Qasim Alvi — Portfolio</title>
+
+  <style>
+    /* --- COLOR & FONT PALETTE --- */
+    :root {
+      --bg: #0f1724;
+      /* Deep Blue Background */
+      --card-bg: #1c2636;
+      /* Card Color */
+      --accent: #2dd4bf;
+      /* Teal Accent */
+      --text-main: #e6eef6;
+      /* Light Text */
+      --text-muted: #9aa6b2;
+      /* Muted Text */
+      --border: #2a3445;
+      /* Dark Border */
+      --radius: 10px;
+      /* Card Radius */
+    }
+
+    /* --- BASIC SETTINGS --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    /* --- CONTAINER & LAYOUT --- */
+    .portfolio-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* --- HORIZONTAL HEADER & NAVIGATION --- */
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 2px solid var(--border);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-menu {
+      display: flex;
+      /* Makes the links horizontal */
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu li a {
+      color: var(--text-main);
+      padding: 10px 15px;
+      margin: 0 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.2s, background-color 0.2s;
+      border-radius: 5px;
+    }
+
+    .nav-menu li a:hover {
+      color: var(--accent);
+      background-color: #2a3445;
+    }
+
+    /* Logo / Name in Header */
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-main);
+    }
+
+
+    /* --- CARDS & SECTIONS --- */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* --- TYPOGRAPHY --- */
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 5px 0;
+      color: white;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 0 0 15px 0;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    /* Teal Border on Headings */
+    h3 {
+      margin-top: 0;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      color: var(--text-main);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* --- PROFILE PIC & CONTACT CARD --- */
+    .profile-card {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 15px auto;
+      border: 4px solid var(--accent);
+    }
+
+    /* --- SKILLS PILLS --- */
+    .pill {
+      display: inline-block;
+      background: #1f293a;
+      color: var(--accent);
+      padding: 6px 14px;
+      margin: 4px 4px 4px 0;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    /* --- SOCIAL ICONS (MOVED TO BOTTOM) --- */
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      padding: 30px 0;
+      /* Add extra spacing at the very bottom */
+    }
+
+    /* Separate the social icons from the final section visually */
+    .social-separator {
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+
+    .icon-box {
+      width: 45px;
+      height: 45px;
+      background-color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+
+    .icon-box:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .icon-box img {
+      width: 22px;
+      height: 22px;
+      filter: invert(1);
+    }
+
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media(max-width: 600px) {
+      .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-menu {
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .nav-menu li a {
+        padding: 8px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-content">
+      <div class="logo">Muhammad Qasim Alvi</div>
+      <ul class="nav-menu">
+        <li><a href="#about">PROFILE</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#education">ACADEMICS</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div class="portfolio-container">
+
+    <section class="card profile-card" style="margin-top: 0;">
+      <img src="cropped_circle_image.png" class="profile-pic" alt="Profile Picture">
+
+      <div style="margin-bottom: 20px;">
+        <h3 style="border:none; margin-bottom:5px; font-size: 1.5rem; padding-left: 0;">Muhammad Qasim Alvi</h3>
+        <span class="muted" style="display:block;">BS Software Engineering</span>
+      </div>
+    </section>
+
+    <section class="card" id="about">
+      <h1>Profile Summary</h1>
+      <p>I am an enthusiastic software engineering student at FAST-NUCES, Peshawar with a strong foundation in
+        programming and problem-solving. Passionate about building efficient solutions and dedicated to continuous
+        learning in new technologies.</p>
+    </section>
+
+    <section class="card" id="skills">
+      <h3>SKILL SET</h3>
+      <div style="margin-top: 5px;">
+        <span class="pill">C / C++</span>
+        <span class="pill">HTML5 & CSS3</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">Algorithms</span>
+        <span class="pill">Data Structures</span>
+        <span class="pill">Problem Solving</span>
+      </div>
+    </section>
+
+    <section class="card" id="education">
+      <h3>ACADEMIA</h3>
+      <div style="margin-bottom: 15px;">
+        <strong>FAST NUCES, Peshawar</strong>
+        <p class="muted" style="margin: 3px 0;">BS Software Engineering &mdash; 2025 – Present</p>
+      </div>
+      <div>
+        <strong>Army Burn Hall College</strong>
+        <p class="muted" style="margin: 3px 0;">ICS & Matriculation (Strong academic record)</p>
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <h3>PROJECTS</h3>
+      <div style="margin-bottom: 15px;">
+        <strong>Simple Web Portfolio</strong>
+        <p class="muted" style="margin: 3px 0;">A clean, responsive personal portfolio website crafted with HTML and
+          CSS.</p>
+      </div>
+      <div>
+        <strong>C++ Problem Solving Repository</strong>
+        <p class="muted" style="margin: 3px 0;">Optimized solutions for algorithmic challenges demonstrating core
+          programming knowledge.</p>
+      </div>
+    </section>
+
+    <section class="card" id="contact">
+      <h3>CONTACT INFO</h3>
+      <div id="contact-info" style="margin-top: 10px;">
+        <p><strong>Phone:</strong> <br> <span class="muted">+92 333 4189098</span></p>
+        <p><strong>Email:</strong> <br> <a href="mailto:qasimalvi6286@gmail.com">qasimalvi6286@gmail.com</a></p>
+        <p><strong>Location:</strong> <br> <span class="muted">Nawansher, Abbottabad</span></p>
+      </div>
+    </section>
+
+    <div class="social-separator"></div>
+    <div class="social-row">
+      <a href="https://instagram.com/m_q_a_j6286" target="_blank" class="icon-box">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="IG" />
+      </a>
+      <a href="https://www.snapchat.com/add/mqaj_6286" target="_blank" class="icon-box">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/snapchat.svg" alt="Snap" />
+      </a>
+      <a href="https://facebook.com" target="_blank" class="icon-box">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="FB" />
+      </a>
+      <a href="https://www.threads.net/@m_q_a_j6286" target="_blank" class="icon-box">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/threads.svg" alt="Threads" />
+      </a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
